@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- Motor Control -->
+  <!-- include file="$(find ugv)/launch/ugv.launch" /-->
+
+  <!-- Transform and Robot Model -->
+  <param name="robot_description" command="cat $(find udv)/config/udv.urdf" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+ 
+  <!-- Camera (No point cloud) -->
+  <include file="$(find realsense2_camera)/launch/udv.launch" />
+  
+  <!-- Line Vector Node -->
+  <node pkg="udv" name="image_listener" type="image_listener.py" />
+
+  <!-- Line Follow Node -->
+  <node pkg="udv" name="line_follow" type="line_follow.py" output="screen" />
+
+  <!-- Joystick Handling -->
+  <node pkg="joy" type="joy_node" name="joy_node">
+    <param name="dev" value="/dev/input/js0" />
+    <param name="deadzone" value="0.3" />
+    <param name="autorepeat_rate" value="20" />
+  </node>
+  <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
+    <rosparam command="load" file="$(find udv)/config/taranis.config.yaml" />
+  </node>
+  
+</launch>

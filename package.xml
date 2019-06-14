@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>udv</name>
+  <version>1.0.0</version>
+  <description>The udv package</description>
+  <maintainer email="cmcollander@gmail.com">Chris Collander</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>ugv</build_depend>
+  <build_export_depend>ugv</build_export_depend>
+  <exec_depend>ugv</exec_depend>
+  <exec_depend>teleop_twist_joy</exec_depend>>
+
+  <export>
+  </export>
+</package>
