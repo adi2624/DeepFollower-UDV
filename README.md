@@ -79,9 +79,13 @@ Tests were conducted on the same track and excellent results were obtained. The 
 
 Overall motion of the robot was inherently smooth.
 
-Selling point: lightweight neural network with less than 8 hours of training data able to follow a line if the image is succesfully masked using Deep Learning. Very handy for delivery robots.
+Conclusion: Lightweight neural network with less than 8 hours of training data able to follow a line if the image is succesfully masked using Deep Learning. 
+
+Potential Applications: Rapid Deployment of Robots in disaster struck areas possible with a high hue tape.
 
 
+
+Flow of Control:
 
 1) Get 640x480 monocular image
 2) Figure out threshold for tape color and carpet color (Hard coded with results from a decision tree)
